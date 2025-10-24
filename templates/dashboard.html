@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefcase - Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div>
+                <h1>🔒 Briefcase</h1>
+                <p id="user-info"></p>
+            </div>
+            <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+        </header>
+        
+        <main class="dashboard-main">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <h2>📤 Upload Document</h2>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="file">File</label>
+                            <input type="file" id="file" name="file" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="recipient">Recipient</label>
+                            <select id="recipient" name="recipient_id" required>
+                                <option value="">Select...</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="viewLimit">View Limit (optional)</label>
+                            <input type="number" id="viewLimit" name="view_limit" min="1" placeholder="No limit">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="expiresInDays">Expires in (days, optional)</label>
+                            <input type="number" id="expiresInDays" name="expires_in_days" min="1" placeholder="No expiration">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Upload Document</button>
+                    <div id="upload-message" class="success-message" style="display: none;"></div>
+                    <div id="upload-error" class="error-message" style="display: none;"></div>
+                </form>
+            </section>
+            
+            <!-- Documents Section -->
+            <section class="documents-section">
+                <div class="documents-grid">
+                    <!-- Sent Documents -->
+                    <div class="documents-column">
+                        <h2>📨 Sent Documents</h2>
+                        <div id="sentDocuments" class="documents-list">
+                            <p class="loading">Loading...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Received Documents -->
+                    <div class="documents-column">
+                        <h2>📥 Received Documents</h2>
+                        <div id="receivedDocuments" class="documents-list">
+                            <p class="loading">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="/static/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Entorno
+.env
+.env.local
+.env.production
+
+# Base de datos
+briefcase.db
+*.db
+*.sqlite
+*.sqlite3
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependencias
+node_modules/
+.npm/
+
+# Temporal
+*.tmp
+*.temp
+*.bak
+
+# Logs
+logs/
+*.log
+
+# Archivos de configuración local
+config.local.py
+settings.local.py
