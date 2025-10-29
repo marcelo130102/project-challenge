@@ -344,10 +344,13 @@ app/
     controllers/
         file_controller.py
         user_controller.py
+        secure_controller.py
     services/
         file_service.py
         user_service.py
         notification_service.py -- patron observer
+        password_dist_service.py
+        document_service.py
     repositories/
         file_repository.py
         user_repository.py
