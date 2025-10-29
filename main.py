@@ -266,6 +266,7 @@ async def list_documents(
 
 
 @app.get("/api/documents/{document_id}/download")
+# auth_verify(request_user, )
 async def download_document(
     document_id: int,
     db: Session = Depends(get_db),
@@ -335,3 +336,27 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
+
+
+# Estructura de proyecto
+'''
+app/
+    controllers/
+        file_controller.py
+        user_controller.py
+    services/
+        file_service.py
+        user_service.py
+        notification_service.py -- patron observer
+    repositories/
+        file_repository.py
+        user_repository.py
+    models/
+        file_model.py
+        user_model.py
+    dtos/
+        file_dto.py	
+    routes/
+        file_routes.py
+        user_routes.py
+'''
